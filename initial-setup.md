@@ -17,4 +17,8 @@ firewall-cmd --permanent --add-service=https
 firewall-cmd --reload
 systemctl enable --now firewalld.service
 #sudo firewall-cmd --permanent --list-all
+#vi /etc/ssh/sshd_config
+#PermitRootLogin no
+#systemctl reload sshd
+
 ```
