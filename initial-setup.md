@@ -42,7 +42,11 @@ systemctl restart chronyd
 #epel-release/\
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 yum update
+#rpm -qa | grep epel
 #yum repolist
+
+#remi-release/\
+yum install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 
 #swap/\
 yum install -y htop
@@ -54,5 +58,12 @@ swapon /swapfile
 sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
 htop
 #cat /proc/swaps
+
+#php7.4/\
+#yum module list php
+yum module enable php:remi-7.4 -y
+yum install -y php php-cli php-common
+
+
 
 ```
