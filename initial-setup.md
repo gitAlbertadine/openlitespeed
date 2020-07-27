@@ -39,5 +39,20 @@ systemctl start chronyd
 systemctl enable chronyd
 systemctl restart chronyd
 
+#epel-release/\
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+yum update
+#yum repolist
+
+#swap/\
+yum install -y htop
+fallocate -l 1G /swapfile
+dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
+htop
+#cat /proc/swaps
 
 ```
