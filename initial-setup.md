@@ -69,6 +69,10 @@ yum install -y php php-cli php-common
 rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm
 #yum repolist
 yum install -y openlitespeed
+systemctl start lsws
+systemctl enable lsws
+yum install -y lsphp74 lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-gd lsphp74-opcache lsphp74-bcmath lsphp74-pdo lsphp74-common lsphp74-xml
+#netstat -pl | grep lsphp
 
 
 
