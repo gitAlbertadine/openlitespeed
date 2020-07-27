@@ -47,6 +47,7 @@ yum update
 
 #remi-release/\
 yum install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+#yum repolist
 
 #swap/\
 yum install -y htop
@@ -63,6 +64,11 @@ htop
 #yum module list php
 yum module enable php:remi-7.4 -y
 yum install -y php php-cli php-common
+
+#openlitespeed/\
+rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm
+#yum repolist
+yum install -y openlitespeed
 
 
 
