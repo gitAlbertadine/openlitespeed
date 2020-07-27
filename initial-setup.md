@@ -1,5 +1,6 @@
 ## Initial setup
 ```
+passwd
 adduser said
 passwd said
 gpasswd -a said wheel
