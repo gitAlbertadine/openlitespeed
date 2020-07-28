@@ -71,10 +71,10 @@ rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rp
 yum install -y openlitespeed
 systemctl start lsws
 systemctl enable lsws
-yum install -y lsphp74 lsphp74-common lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-pdo lsphp74-gd lsphp74-opcache lsphp74-bcmath lsphp74-xml lsphp74-imap lsphp74-soap
- 
-lsphp74-xml
+yum install -y lsphp74 lsphp74-common lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-pdo lsphp74-gd lsphp74-opcache lsphp74-bcmath 
+lsphp74-xml lsphp74-imap lsphp74-soap
 #netstat -pl | grep lsphp
+
 #MariaDB/\
 yum -y upgrade
 tee /etc/yum.repos.d/MariaDB.repo<<EOF 
@@ -98,19 +98,32 @@ cd /usr/local/lsws/admin/misc
 http://server_domain_or_IP:7080
 said->Ax..xB
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp
+
 #Configure OpenLiteSpeed with PHP 7.4/\
 #Server Configuration>External App>+ LiteSpeed SAPI App>next
 #-add:
-#Name: lsphp74
-#Address: uds://tmp/lshttpd/lsphp.sock
-#Notes: lsphp74 for OpenLiteSpeed
-#Max Connections: 35
-#Initial Request Timeout (secs): 60
-#Retry Timeout (secs): 0
-#Command: $SERVER_ROOT/lsphp74/bin/lsphp
-
+-Name: lsphp74
+-Address: uds://tmp/lshttpd/lsphp.sock
+-Notes: lsphp74 for OpenLiteSpeed
+-Max Connections: 35
+-Initial Request Timeout (secs): 60
+-Retry Timeout (secs): 0
+-Command: $SERVER_ROOT/lsphp74/bin/lsphp
 #Listener>Default>view>Address Settings>edit>80>save
 # Testing http://IP
+
+#name-based virtual hosting/\
+cd /usr/local/lsws && mkdir Example2 && mkdir Example2/{conf,html,logs} && chown lsadm:lsadm Example2/conf && cd
+
+#Wordpress/\
+-mysql -u root -p
+-MariaDB [(none)]> grant all privileges on wordpress.* to wordpress@localhost identified by 'wordpress';
+-exit
+
+
+
+
+
 
 
 
