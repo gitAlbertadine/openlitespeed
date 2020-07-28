@@ -106,6 +106,7 @@ ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp
 #Initial Request Timeout (secs): 60
 #Retry Timeout (secs): 0
 #Command: $SERVER_ROOT/lsphp74/bin/lsphp
+#Listener>Default>view>Address Settings>edit>80>save
 
 
 
