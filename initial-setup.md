@@ -93,8 +93,19 @@ firewall-cmd --add-port=7080/tcp --permanent
 firewall-cmd --reload
 cd /usr/local/lsws/admin/misc
 ./admpass.sh
-
+http://server_domain_or_IP:7080
+said->Ax..xB
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp
+#Configure OpenLiteSpeed with PHP 7.4/\
+#Server Configuration>External App>+ LiteSpeed SAPI App>next
+#-add:
+#Name: lsphp74
+#Address: uds://tmp/lshttpd/lsphp.sock
+#Notes: lsphp74 for OpenLiteSpeed
+#Max Connections: 35
+#Initial Request Timeout (secs): 60
+#Retry Timeout (secs): 0
+#Command: $SERVER_ROOT/lsphp74/bin/lsphp
 
 
 
