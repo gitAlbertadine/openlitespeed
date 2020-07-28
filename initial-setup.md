@@ -86,7 +86,8 @@ EOF
 yum install -y boost-program-options
 yum install -y MariaDB-server MariaDB-client --disablerepo=AppStream 
 systemctl enable --now mariadb
-sudo mysql_secure_installation
+mysql_secure_installation
+mysql -u root -p
 
 
 
