@@ -114,11 +114,14 @@ ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp
 
 #name-based virtual hosting/\
 cd /usr/local/lsws && mkdir Example2 && mkdir Example2/{conf,html,logs} && chown lsadm:lsadm Example2/conf && cd
+-............
 
 #Wordpress/\
 -mysql -u root -p
 -MariaDB [(none)]> grant all privileges on wordpress.* to wordpress@localhost identified by 'wordpress';
 -exit
+yum install -y wget unzip && cd /usr/local/lsws/Example2/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
+chown -R nobody:nobody wordpress
 
 
 
