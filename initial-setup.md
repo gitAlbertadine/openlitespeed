@@ -73,7 +73,6 @@ systemctl start lsws
 systemctl enable lsws
 yum install -y lsphp74 lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-gd lsphp74-opcache lsphp74-bcmath lsphp74-pdo lsphp74-common lsphp74-xml
 #netstat -pl | grep lsphp
-
 #MariaDB/\
 yum -y upgrade
 tee /etc/yum.repos.d/MariaDB.repo<<EOF 
@@ -88,6 +87,16 @@ yum install -y MariaDB-server MariaDB-client --disablerepo=AppStream
 systemctl enable --now mariadb
 mysql_secure_installation
 mysql -u root -p
+MariaDB [(none)]> select User, Password, Host from mysql.user;
+#Admin Password Authentication/\
+firewall-cmd --add-port=7080/tcp --permanent
+firewall-cmd --reload
+cd /usr/local/lsws/admin/misc
+./admpass.sh
+
+ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp
+
+
 
 
 
