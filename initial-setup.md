@@ -74,6 +74,19 @@ systemctl enable lsws
 yum install -y lsphp74 lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-gd lsphp74-opcache lsphp74-bcmath lsphp74-pdo lsphp74-common lsphp74-xml
 #netstat -pl | grep lsphp
 
+#MariaDB/\
+yum -y upgrade
+tee /etc/yum.repos.d/MariaDB.repo<<EOF 
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.4/centos8-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+EOF
+yum install -y boost-program-options
+yum install MariaDB-server MariaDB-client --disablerepo=AppStream 
+systemctl enable --now mariadb
+
 
 
 ```
