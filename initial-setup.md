@@ -84,8 +84,9 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 EOF
 yum install -y boost-program-options
-yum install MariaDB-server MariaDB-client --disablerepo=AppStream 
+yum install -y MariaDB-server MariaDB-client --disablerepo=AppStream 
 systemctl enable --now mariadb
+sudo mysql_secure_installation
 
 
 
