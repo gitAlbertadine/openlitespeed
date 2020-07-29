@@ -180,8 +180,10 @@ yum install -y wget unzip && cd /usr/local/lsws/Example2/html && wget https://wo
 chown -R nobody:nobody wordpress
 ```
 
-
-
+## mariadb-connector-c-3.0.7-1.el8.x86_64.rpm/\
+```
+yum install http://mirror.centos.org/centos/8/AppStream/x86_64/os/Packages/mariadb-connector-c-3.0.7-1.el8.x86_64.rpm
+```
 
 
 
