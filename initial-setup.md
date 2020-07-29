@@ -38,6 +38,8 @@ int main()
 #./prog
 -Investigate error/List library dependencies
 #ldd libctest.so
+-add program to .bashrc
+-alias prog='cd /opt && ./prog'
 ---------------------------------------------------------------------------------------
 #user/\
 #rpm -q centos-release
