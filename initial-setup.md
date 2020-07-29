@@ -1,7 +1,5 @@
-## Initial setup
+## shared object libraries:(.so)/\
 ```
----------------------------------------------------------------------------------
-#shared object libraries:(.so)/\
 -ctest1.c
 void ctest1(int *i)
 {
@@ -38,10 +36,12 @@ int main()
 #./prog
 -Investigate error/List library dependencies
 #ldd libctest.so
--add program to .bashrc
--alias prog='cd /opt && ./prog'
----------------------------------------------------------------------------------------
-#user/\
+-add program to .bash_profile
+-export PATH=$PATH:/opt
+```
+
+## Initial setup/\
+```
 #rpm -q centos-release
 passwd
 adduser said
