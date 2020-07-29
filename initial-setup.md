@@ -38,6 +38,7 @@ int main()
 #ldd libctest.so
 -add program to .bash_profile
 -export PATH=$PATH:/opt
+-execute from anywhere (prog)
 ```
 
 ## Initial setup/\
