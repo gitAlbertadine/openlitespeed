@@ -190,7 +190,7 @@ cd /usr/local/lsws/admin/misc
 ./admpass.sh
 http://server_domain_or_IP:7080
 said->Ax..xB
-ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp
+ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 ```
 ## Configure OpenLiteSpeed with PHP 7.4/\
 ```
