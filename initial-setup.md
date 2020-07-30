@@ -1,3 +1,43 @@
+## script
+```
+passwd
+adduser said
+passwd said
+gpasswd -a said wheel
+rsync --archive --chown=$USER:$USER ~/.ssh /home/said
+chown -R said:said /home/said/.ssh
+yum check-update
+yum update
+yum install -y firewalld firewall-config firewall-applet
+systemctl start firewalld
+systemctl unmask --now firewalld.service
+firewall-cmd --permanent --add-service=ssh --zone=public
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+firewall-cmd --reload
+systemctl enable --now firewalld.service
+timedatectl set-timezone America/New_York
+yum install -y chrony
+systemctl start chronyd
+systemctl enable chronyd
+systemctl restart chronyd
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+yum update
+yum install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+yum install -y htop
+fallocate -l 1G /swapfile
+dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
+rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm
+yum install -y openlitespeed
+systemctl start lsws
+systemctl enable lsws
+yum install -y lsphp74 lsphp74-common lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-pdo lsphp74-gd lsphp74-opcache lsphp74-bcmath 
+lsphp74-xml lsphp74-imap lsphp74-soap
+```
 ## shared object libraries:(.so)/\
 ```
 -ctest1.c
