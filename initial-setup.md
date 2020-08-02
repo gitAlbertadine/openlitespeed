@@ -43,7 +43,11 @@ firewall-cmd --permanent --list-all
 https:<IP Address>:8090 
 Username: admin 
 Password: 1234567
+login cyberpanel(change password)
 adminPass 'xxxxxxxxxxxxxx'
+
+-setup and login to OpenLiteSpeed webadmin console(change password)
+/usr/local/lsws/admin/misc/admpass.sh
 ```
 ## shared object libraries:(.so)/\
 ```
