@@ -96,7 +96,7 @@ yum install -y openlitespeed
 systemctl start lsws
 systemctl enable lsws
 yum install -y lsphp74 
-yum install lsphp74-*
+yum install -y lsphp74-*
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 #netstat -pl | grep lsphp
 
