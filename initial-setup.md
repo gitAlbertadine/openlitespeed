@@ -222,10 +222,15 @@ cd /usr/local/lsws && mkdir Example2 && mkdir Example2/{conf,html,logs} && chown
 ## Wordpress/\
 ```
 -mysql -u root -p
--MariaDB [(none)]> grant all privileges on wordpress.* to wordpress@localhost identified by 'wordpress';
--exit
+-mariadb> CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+-mariadb> GRANT ALL ON wordpress.* TO 'adam'@'localhost' IDENTIFIED BY 'Ax<x3$*>xB';
+-mariadb> FLUSH PRIVILEGES;
+-mariadb> SELECT user,authentication_string,plugin,host FROM mysql.user;
+-mariadb> show databases;
+-mariadb> exit
 yum install -y wget unzip && cd /usr/local/lsws/Example2/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
-chown -R nobody:nobody wordpress
+chown -R nobody:nobody /usr/local/lsws/Example/html
+
 ```
 
 ## mariadb-connector-c-3.0.7-1.el8.x86_64.rpm/\
