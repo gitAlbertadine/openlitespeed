@@ -41,8 +41,6 @@ firewall-cmd --reload
 firewall-cmd --permanent --list-all
 -Visit:cyberpanel
 https:<IP Address>:8090 
-Username: admin 
-Password: 1234567
 login cyberpanel(change password)
 adminPass 'xxxxxxxxxxxxxx'
 -visit: webadmin consol
