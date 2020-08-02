@@ -167,8 +167,9 @@ rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rp
 yum install -y openlitespeed
 systemctl start lsws
 systemctl enable lsws
-yum install -y lsphp74 lsphp74-common lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-pdo lsphp74-gd lsphp74-opcache lsphp74-bcmath 
-lsphp74-xml lsphp74-imap lsphp74-soap
+yum install -y lsphp74 
+#lsphp74-common lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-pdo lsphp74-gd lsphp74-opcache lsphp74-bcmath lsphp74-xml lsphp74-imap lsphp74-soap
+yum install lsphp74-*
 #netstat -pl | grep lsphp
 ```
 ## MariaDB/\
@@ -196,7 +197,7 @@ firewall-cmd --reload
 cd /usr/local/lsws/admin/misc
 ./admpass.sh
 http://server_domain_or_IP:7080
-said->Ax..xB
+admin->Ax..xB
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 ```
 ## Configure OpenLiteSpeed with PHP 7.4/\
