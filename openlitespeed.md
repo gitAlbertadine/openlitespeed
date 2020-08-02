@@ -20,6 +20,7 @@ systemctl restart chronyd
 #cat /proc/swaps
 #timedatectl
 #python2 --version
+#python3 --version
 ```
 ## firewalld/\
 ```
@@ -29,50 +30,49 @@ systemctl unmask --now firewalld.service
 firewall-cmd --permanent --add-service=ssh --zone=public
 firewall-cmd --permanent --add-service=http
 firewall-cmd --permanent --add-service=https
-firewall-cmd --permanent --zone=public --add-port=8090/tcp
+#firewall-cmd --permanent --zone=public --add-port=8090/tcp
 firewall-cmd --permanent --zone=public --add-port=7080/tcp
 firewall-cmd --permanent --zone=public --add-port=9090/tcp
 firewall-cmd --permanent --zone=public --add-port=80/tcp
 firewall-cmd --permanent --zone=public --add-port=443/tcp
 firewall-cmd --permanent --zone=public --add-port=443/udp
-firewall-cmd --permanent --zone=public --add-port=21/tcp
-firewall-cmd --permanent --zone=public --add-port=40110-40210/tcp
-firewall-cmd --permanent --zone=public --add-port=25/tcp
-firewall-cmd --permanent --zone=public --add-port=587/tcp
-firewall-cmd --permanent --zone=public --add-port=465/tcp
-firewall-cmd --permanent --zone=public --add-port=110/tcp
-firewall-cmd --permanent --zone=public --add-port=143/tcp
-firewall-cmd --permanent --zone=public --add-port=993/tcp
-firewall-cmd --permanent --zone=public --add-port=53/tcp
-firewall-cmd --permanent --zone=public --add-port=53/udp
+#firewall-cmd --permanent --zone=public --add-port=21/tcp
+#firewall-cmd --permanent --zone=public --add-port=40110-40210/tcp
+#firewall-cmd --permanent --zone=public --add-port=25/tcp
+#firewall-cmd --permanent --zone=public --add-port=587/tcp
+#firewall-cmd --permanent --zone=public --add-port=465/tcp
+#firewall-cmd --permanent --zone=public --add-port=110/tcp
+#firewall-cmd --permanent --zone=public --add-port=143/tcp
+#firewall-cmd --permanent --zone=public --add-port=993/tcp
+#firewall-cmd --permanent --zone=public --add-port=53/tcp
+#firewall-cmd --permanent --zone=public --add-port=53/udp
 firewall-cmd --reload
-firewall-cmd --permanent --list-all
-#sudo firewall-cmd --permanent --remove-service=ssh
-#sudo firewall-cmd --permanent --add-port=8080/tcp
-#sudo firewall-cmd --get-services
 systemctl enable --now firewalld.service
--visit: webadmin consol
-https:<IP Address>:7080
--setup and login to OpenLiteSpeed webadmin console(change password)
-/usr/local/lsws/admin/misc/admpass.sh
--visit cockpit
-https:<IP Address>:9090
+#firewall-cmd --permanent --list-all
+#sudo firewall-cmd --permanent --remove-service=ssh
+#sudo firewall-cmd --get-services
+#-visit: webadmin consol
+#https:<IP Address>:7080
+#-setup and login to OpenLiteSpeed webadmin console(change password)
+#/usr/local/lsws/admin/misc/admpass.sh
+#-visit cockpit
+#https:<IP Address>:9090
 
 ```
 ## root/\
 ```
-#vi /etc/ssh/sshd_config
+[#vi /etc/ssh/sshd_config
 #PermitRootLogin no
-#systemctl reload sshd
+#systemctl reload sshd]
 ```
 ## chrony/\
 ```
-timedatectl set-timezone America/New_York
+[timedatectl set-timezone America/New_York
 #timedatectl
 yum install -y chrony
 systemctl start chronyd
 systemctl enable chronyd
-systemctl restart chronyd
+systemctl restart chronyd]
 ```
 ## epel-release/\
 ```
@@ -96,10 +96,10 @@ yum install -y openlitespeed
 systemctl start lsws
 systemctl enable lsws
 yum install -y lsphp74 
-#lsphp74-common lsphp74-mysqlnd lsphp74-process lsphp74-mbstring lsphp74-mcrypt lsphp74-pdo lsphp74-gd lsphp74-opcache lsphp74-bcmath lsphp74-xml lsphp74-imap lsphp74-soap
 yum install lsphp74-*
-#netstat -pl | grep lsphp
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
+#netstat -pl | grep lsphp
+
 ```
 ## MariaDB/\
 ```
@@ -133,11 +133,6 @@ MariaDB [(none)]> select User, Password, Host from mysql.user;
 #Listener>Default>view>Address Settings>edit>80>save
 # Testing http://IP
 ```
-## name-based virtual hosting/\
-```
-cd /usr/local/lsws && mkdir Example2 && mkdir Example2/{conf,html,logs} && chown lsadm:lsadm Example2/conf && cd
--............
-```
 ## Wordpress/\
 ```
 -mysql -u root -p
@@ -147,6 +142,6 @@ cd /usr/local/lsws && mkdir Example2 && mkdir Example2/{conf,html,logs} && chown
 -mariadb> SELECT user,authentication_string,plugin,host FROM mysql.user;
 -mariadb> show databases;
 -mariadb> exit
-yum install -y wget unzip && cd /usr/local/lsws/Example2/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
-chown -R nobody:nobody /usr/local/lsws/Example/html
+yum install -y wget unzip && cd /usr/local/lsws/Example/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
+chown -R nobody:nobody /usr/local/lsws/Example/html/wordpres
 ```
