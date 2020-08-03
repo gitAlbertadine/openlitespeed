@@ -118,8 +118,13 @@ yum install -y MariaDB-server MariaDB-client --disablerepo=AppStream      [yum r
 systemctl enable --now mariadb
 mysql_secure_installation
 mysql -u root -p
-MariaDB [(none)]> select User, Password, Host from mysql.user;
-#Admin Password Authentication/\
+-mariadb> select User, Password, Host from mysql.user;
+-mariadb> CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+-mariadb> GRANT ALL ON wordpress.* TO 'adam'@'localhost' IDENTIFIED BY 'Ax<x3$*>xB';
+-mariadb> FLUSH PRIVILEGES;
+-mariadb> SELECT user,authentication_string,plugin,host FROM mysql.user;
+-mariadb> show databases;
+-mariadb> exit
 ```
 ## Configure OpenLiteSpeed with PHP 7.4/\
 ```
@@ -137,13 +142,6 @@ MariaDB [(none)]> select User, Password, Host from mysql.user;
 ```
 ## Wordpress/\
 ```
--mysql -u root -p
--mariadb> CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
--mariadb> GRANT ALL ON wordpress.* TO 'adam'@'localhost' IDENTIFIED BY 'Ax<x3$*>xB';
--mariadb> FLUSH PRIVILEGES;
--mariadb> SELECT user,authentication_string,plugin,host FROM mysql.user;
--mariadb> show databases;
--mariadb> exit
 cd /usr/local/lsws/Example/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
 chown -R nobody:nobody /usr/local/lsws/Example/html/wordpres
 ```
