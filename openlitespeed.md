@@ -142,6 +142,7 @@ vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 ## Configure OpenLiteSpeed with PHP 7.4/\
 ```
 #Server Configuration>External App>+ LiteSpeed SAPI App> edit 
+#Listeners>80
 #-add:
 -Name: lsphp74
 -Address: uds://tmp/lshttpd/lsphp74.sock
