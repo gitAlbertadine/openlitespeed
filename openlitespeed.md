@@ -141,10 +141,10 @@ vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 ```
 ## Configure OpenLiteSpeed with PHP 7.4/\
 ```
-#Server Configuration>External App>+ LiteSpeed SAPI App>next
+#Server Configuration>External App>+ LiteSpeed SAPI App> edit 
 #-add:
 -Name: lsphp74
--Address: uds://tmp/lshttpd/lsphp.sock
+-Address: uds://tmp/lshttpd/lsphp74.sock
 -Notes: lsphp74 for OpenLiteSpeed
 -Max Connections: 35
 -Initial Request Timeout (secs): 60
@@ -152,4 +152,11 @@ vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 -Command: $SERVER_ROOT/lsphp74/bin/lsphp
 #Listener>Default>view>Address Settings>edit>80>save
 # Testing http://IP
+# Virtual Hosts> View:
+# General:-Document Root:$VH_ROOT/html/wordpress/
+          -Index Files index.php index.html
+# Rewrite:Rewrie Control>yes yes
+# Security:click the Delete button next to SampleProtectedArea within the Realms List table
+# Context:delete the /protected/ context that was associated with the security realm you just deleted
+# Graceful Restart
 ```
