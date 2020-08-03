@@ -128,17 +128,17 @@ mysql -u root -p
 ```
 ## Wordpress/\
 ```
-cd /usr/local/lsws/Example/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
-touch /usr/local/lsws/Example/html/wordpress/.htaccess
+cd /usr/local/lsws/Examplex/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
+touch /usr/local/lsws/Examplex/html/wordpress/.htaccess
 mkdir wp-content/upgrade
 cp wp-config-sample.php wp-config.php
 curl -s https://api.wordpress.org/secret-key/1.1/salt/
-vi /usr/local/lsws/Example/html/wordpress/wp-config.php
+vi /usr/local/lsws/Examplex/html/wordpress/wp-config.php
 -add
  define('FS_METHOD', 'direct');
-chown -R nobody:nobody /usr/local/lsws/Example/html/wordpress
-find /usr/local/lsws/Example/html/wordpress/ -type d -exec chmod 750 {} \;
-find /usr/local/lsws/Example/html/wordpress/ -type f -exec chmod 640 {} \;
+chown -R nobody:nobody /usr/local/lsws/Examplex/html/wordpress
+find /usr/local/lsws/Examplex/html/wordpress/ -type d -exec chmod 750 {} \;
+find /usr/local/lsws/Examplex/html/wordpress/ -type f -exec chmod 640 {} \;
 ```
 ## Configure OpenLiteSpeed with PHP 7.4/\
 ```
