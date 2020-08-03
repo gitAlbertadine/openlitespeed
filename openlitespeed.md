@@ -126,6 +126,19 @@ mysql -u root -p
 -mariadb> show databases;
 -mariadb> exit
 ```
+## Wordpress/\
+```
+cd /usr/local/lsws/Example/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
+touch /usr/local/lsws/Example/html/wordpres/.htaccess
+mkdir ~/Downloads/wordpress/wp-content/upgrade
+chown -R nobody:nobody /usr/local/lsws/Example/html/wordpress
+find /usr/local/lsws/Example/html/wordpress/ -type d -exec chmod 750 {} \;
+find /usr/local/lsws/Example/html/wordpress/ -type f -exec chmod 640 {} \;
+curl -s https://api.wordpress.org/secret-key/1.1/salt/
+vi /usr/local/lsws/Example/html/wordpress/wp-config.php
+-add
+ define('FS_METHOD', 'direct');
+```
 ## Configure OpenLiteSpeed with PHP 7.4/\
 ```
 #Server Configuration>External App>+ LiteSpeed SAPI App>next
@@ -139,9 +152,4 @@ mysql -u root -p
 -Command: $SERVER_ROOT/lsphp74/bin/lsphp
 #Listener>Default>view>Address Settings>edit>80>save
 # Testing http://IP
-```
-## Wordpress/\
-```
-cd /usr/local/lsws/Example/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
-chown -R nobody:nobody /usr/local/lsws/Example/html/wordpres
 ```
