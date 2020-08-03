@@ -161,3 +161,16 @@ vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 # Context:delete the /protected/ context that was associated with the security realm you just deleted
 # Graceful Restart
 ```
+## Name-Based Virtual Hosting/\
+```
+cd /usr/local/lsws
+mkdir Example2
+mkdir Example2/{conf,html,logs}
+chown lsadm:lsadm Example2/conf
+#- Virtual Hosts 
+Example2
+$SERVER_ROOT/Example2/
+$SERVER_ROOT?conf/vhosts/Example2/vhconf.conf
+#-Listner(default80)>Virtual Host Mappings>add domaine
+
+```
