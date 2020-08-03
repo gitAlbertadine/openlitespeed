@@ -75,6 +75,7 @@ vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 #-mariadb> SELECT user,authentication_string,plugin,host FROM mysql.user;
 #-mariadb> show databases;
 #-mariadb> exit
+#systemctl restart mariadb
 #-add
 # define('FS_METHOD', 'direct');
 #cat /proc/swaps
