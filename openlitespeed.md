@@ -8,7 +8,7 @@ rsync --archive --chown=$USER:$USER ~/.ssh /home/said
 chown -R said:said /home/said/.ssh
 dnf check-update
 dnf update
-dnf -y install openssl openssl-libs libargon2 wget tar zip unzip  python36
+dnf -y install openssl openssl-libs libargon2 wget tar zip unzip  python2 python3
 fallocate -l 1G /swapfile
 dd if=/dev/zero of=/swapfile bs=1024 count=1048576
 chmod 600 /swapfile
