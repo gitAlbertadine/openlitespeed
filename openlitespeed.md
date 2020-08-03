@@ -129,7 +129,7 @@ mysql -u root -p
 ## Wordpress/\
 ```
 cd /usr/local/lsws/Example/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
-touch /usr/local/lsws/Example/html/wordpres/.htaccess
+touch /usr/local/lsws/Example/html/wordpress/.htaccess
 mkdir ~/Downloads/wordpress/wp-content/upgrade
 chown -R nobody:nobody /usr/local/lsws/Example/html/wordpress
 find /usr/local/lsws/Example/html/wordpress/ -type d -exec chmod 750 {} \;
