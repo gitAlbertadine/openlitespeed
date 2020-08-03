@@ -135,6 +135,7 @@ chown -R nobody:nobody /usr/local/lsws/Example/html/wordpress
 find /usr/local/lsws/Example/html/wordpress/ -type d -exec chmod 750 {} \;
 find /usr/local/lsws/Example/html/wordpress/ -type f -exec chmod 640 {} \;
 curl -s https://api.wordpress.org/secret-key/1.1/salt/
+cp wp-config-sample.php wp-config.php
 vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 -add
  define('FS_METHOD', 'direct');
