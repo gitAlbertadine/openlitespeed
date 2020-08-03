@@ -128,17 +128,17 @@ mysql -u root -p
 ```
 ## Wordpress/\
 ```
-cd /usr/local/lsws/Examplex/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
-touch /usr/local/lsws/Examplex/html/wordpress/.htaccess
-mkdir wp-content/upgrade
-cp wp-config-sample.php wp-config.php
+cd /usr/local/lsws/Example/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
+touch /usr/local/lsws/Example/html/wordpress/.htaccess
+mkdir /usr/local/lsws/Example/html/wordpress/wp-content/upgrade
+cp /usr/local/lsws/Example/html/wordpress/wp-config-sample.php /usr/local/lsws/Example/html/wordpress/wp-config.php
 curl -s https://api.wordpress.org/secret-key/1.1/salt/
-vi /usr/local/lsws/Examplex/html/wordpress/wp-config.php
+vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 -add
  define('FS_METHOD', 'direct');
-chown -R nobody:nobody /usr/local/lsws/Examplex/html/wordpress
-find /usr/local/lsws/Examplex/html/wordpress/ -type d -exec chmod 750 {} \;
-find /usr/local/lsws/Examplex/html/wordpress/ -type f -exec chmod 640 {} \;
+chown -R nobody:nobody /usr/local/lsws/Example/html/wordpress
+find /usr/local/lsws/Example/html/wordpress/ -type d -exec chmod 750 {} \;
+find /usr/local/lsws/Example/html/wordpress/ -type f -exec chmod 640 {} \;
 ```
 ## Configure OpenLiteSpeed with PHP 7.4/\
 ```
@@ -164,10 +164,7 @@ find /usr/local/lsws/Examplex/html/wordpress/ -type f -exec chmod 640 {} \;
 ```
 ## Name-Based Virtual Hosting/\
 ```
-cd /usr/local/lsws
-mkdir Example2
-mkdir Example2/{conf,html,logs}
-chown lsadm:lsadm Example2/conf
+cd /usr/local/lsws && mkdir -p Example2/{conf,html,logs} && chown lsadm:lsadm Example2/conf
 #- Virtual Hosts 
 Example2
 $SERVER_ROOT/Example2/
