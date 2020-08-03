@@ -170,7 +170,7 @@ chown lsadm:lsadm Example2/conf
 #- Virtual Hosts 
 Example2
 $SERVER_ROOT/Example2/
-$SERVER_ROOT?conf/vhosts/Example2/vhconf.conf
+$SERVER_ROOT/conf/vhosts/Example2/vhconf.conf
 #-Listner(default80)>Virtual Host Mappings>add domaine
 
 ```
