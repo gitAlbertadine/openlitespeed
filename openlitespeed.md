@@ -65,7 +65,6 @@ curl -s https://api.wordpress.org/secret-key/1.1/salt/
 chown -R nobody:nobody /usr/local/lsws/Example/html/wordpress
 find /usr/local/lsws/Example/html/wordpress/ -type d -exec chmod 750 {} \;
 find /usr/local/lsws/Example/html/wordpress/ -type f -exec chmod 640 {} \;
-cd /usr/local/lsws && mkdir -p Example/{conf,html,logs} && chown lsadm:lsadm Example2/conf
 vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 
 ----------------------------------------  
