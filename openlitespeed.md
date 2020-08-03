@@ -20,7 +20,7 @@ swapon /swapfile
 sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
 timedatectl set-timezone America/New_York
 systemctl restart chronyd
-yum install -y firewalld firewall-config firewall-applet
+dnf install -y firewalld firewall-config firewall-applet
 systemctl start firewalld
 systemctl unmask --now firewalld.service
 firewall-cmd --permanent --add-service=ssh --zone=public
