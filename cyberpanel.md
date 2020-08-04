@@ -38,6 +38,7 @@ firewall-cmd --permanent --zone=public --add-port=143/tcp
 firewall-cmd --permanent --zone=public --add-port=993/tcp
 firewall-cmd --permanent --zone=public --add-port=53/tcp
 firewall-cmd --permanent --zone=public --add-port=53/udp
+firewall-cmd --permanent --zone=public --add-port=40110-40210/tcp
 firewall-cmd --reload
 firewall-cmd --permanent --list-all
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
