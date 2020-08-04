@@ -289,6 +289,18 @@ $SERVER_ROOT/conf/vhosts/Example2/vhconf.conf
 Listeners> map add domaine
 virtualhost > Document Root: $SERVER_ROOT/Example2/html/wordpress2
               General> add domaine
+              
+cd /usr/local/lsws/Example2/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
+touch /usr/local/lsws/Example2/html/wordpress2/.htaccess
+mkdir /usr/local/lsws/Example2/html/wordpress2/wp-content/upgrade
+cp /usr/local/lsws/Example2/html/wordpress2/wp-config-sample.php /usr/local/lsws/Example2/html/wordpress2/wp-config.php
+curl -s https://api.wordpress.org/secret-key/1.1/salt/
+vi /usr/local/lsws/Example2/html/wordpress2/wp-config.php
+-add
+ define('FS_METHOD', 'direct');
+
+find /usr/local/lsws/Example2/html/wordpress2/ -type d -exec chmod 750 {} \;
+find /usr/local/lsws/Example2/html/wordpress2/ -type f -exec chmod 640 {} \;              
 chown -R nobody:nobody /usr/local/lsws/Example2/html/wordpress2 
 reboot
 
