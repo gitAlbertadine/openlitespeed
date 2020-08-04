@@ -41,7 +41,13 @@ firewall-cmd --permanent --zone=public --add-port=53/udp
 firewall-cmd --reload
 firewall-cmd --permanent --list-all
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
-
+If you want to kill the watchdog , run watchdog kill
+#cat /proc/swaps
+#timedatectl
+#python2 --version
+#python3 --version
+#firewall-cmd --permanent --list-all
+#dnf repolist
 -Visit:cyberpanel
 https:<IP Address>:8090 
 login cyberpanel(change password)
