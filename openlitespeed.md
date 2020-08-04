@@ -266,6 +266,28 @@ Example2
 $SERVER_ROOT/Example2/
 $SERVER_ROOT/conf/vhosts/Example2/vhconf.conf
 #-Listner(default80)>Virtual Host Mappings>add domaine
-virtualhost > add domaine
+
+#Server Configuration>External App>+ LiteSpeed SAPI App> edit 
+#Listeners>80
+#-add:
+-Name: lsphp74
+-Address: uds://tmp/lshttpd/lsphp74.sock
+-Notes: lsphp74 for OpenLiteSpeed
+-Max Connections: 35
+-Initial Request Timeout (secs): 60
+-Retry Timeout (secs): 0
+-Command: $SERVER_ROOT/lsphp74/bin/lsphp
+#Listener>Default>view>Address Settings>edit>80>save
+# Testing http://IP
+# Virtual Hosts> View:
+# General:-Document Root:$VH_ROOT/html/wordpress/
+          -Index Files yes / index.php index.html
+# Rewrite:Rewrie Control>yes yes
+# Security:click the Delete button next to SampleProtectedArea within the Realms List table
+# Context:delete the /protected/ context that was associated with the security realm you just deleted
+# Graceful Restart
+Listeners> map add domaine
+virtualhost > Document Root: $SERVER_ROOT/Example2/html/wordpress2
+              General> add domaine
 
 ```
