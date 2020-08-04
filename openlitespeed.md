@@ -289,7 +289,7 @@ $SERVER_ROOT/conf/vhosts/Example2/vhconf.conf
 Listeners> map add domaine
 virtualhost > Document Root: $SERVER_ROOT/Example2/html/wordpress2
               General> add domaine
-              
+reboot and test            
 cd /usr/local/lsws/Example2/html && wget https://wordpress.org/latest.zip && unzip latest.zip && rm latest.zip
 touch /usr/local/lsws/Example2/html/wordpress2/.htaccess
 mkdir /usr/local/lsws/Example2/html/wordpress2/wp-content/upgrade
@@ -302,6 +302,16 @@ vi /usr/local/lsws/Example2/html/wordpress2/wp-config.php
 find /usr/local/lsws/Example2/html/wordpress2/ -type d -exec chmod 750 {} \;
 find /usr/local/lsws/Example2/html/wordpress2/ -type f -exec chmod 640 {} \;              
 chown -R nobody:nobody /usr/local/lsws/Example2/html/wordpress2 
+
+mysql -u root -p
+-mariadb> select User, Password, Host from mysql.user;
+-mariadb> CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+-mariadb> GRANT ALL ON wordpress.* TO 'adam'@'localhost' IDENTIFIED BY 'Ax<x3$*>xB';
+-mariadb> FLUSH PRIVILEGES;
+-mariadb> SELECT user,authentication_string,plugin,host FROM mysql.user;
+-mariadb> show databases;
+-mariadb> exit
+systemctl restart mariadb
 reboot
 
 ```
