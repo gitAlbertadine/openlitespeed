@@ -267,7 +267,7 @@ $SERVER_ROOT/Example2/
 $SERVER_ROOT/conf/vhosts/Example2/vhconf.conf
 #-Listner(default80)>Virtual Host Mappings>add domaine
 
-#Server Configuration>External App>+ LiteSpeed SAPI App> edit 
+#Virtual Hosts>External App>+ LiteSpeed SAPI App> edit 
 #Listeners>80
 #-add:
 -Name: lsphp74
