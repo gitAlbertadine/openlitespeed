@@ -289,5 +289,6 @@ $SERVER_ROOT/conf/vhosts/Example2/vhconf.conf
 Listeners> map add domaine
 virtualhost > Document Root: $SERVER_ROOT/Example2/html/wordpress2
               General> add domaine
+chown -R nobody:nobody /usr/local/lsws/Example2/html/wordpress2              
 
 ```
