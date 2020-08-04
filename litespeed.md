@@ -33,6 +33,14 @@ firewall-cmd --reload
 systemctl enable --now firewalld.service
 
 sudo yum groupinstall 'Development Tools'
-sudo yum install libxml2-devel.x86_64 openssl-devel.x86_64 bzip2-devel.x86_64 libcurl-devel.x86_64 db4-devel.x86_64 libjpeg-devel.x86_64 libpng-devel.x86_64 libXpm-devel.x86_64 freetype-devel.x86_64 gmp-devel.x86_64 libc-client-devel.x86_64 openldap-devel.x86_64 libmcrypt-devel.x86_64 mhash-devel.x86_64 freetds-devel.x86_64 zlib-devel.x86_64 mysql-devel.x86_64 ncurses-devel.x86_64 pcre-devel.x86_64 unixODBC-devel.x86_64 postgresql-devel.x86_64 sqlite-devel.x86_64 aspell-devel.x86_64 readline-devel.x86_64 recode-devel.x86_64 net-snmp-devel.x86_64 libtidy-devel.x86_64 libxslt-devel.x86_64 t1lib-devel.x86_64
+sudo yum install libxml2-devel.x86_64 openssl-devel.x86_64 bzip2-devel.x86_64 libcurl-devel.x86_64 libpng-devel.x86_64 libXpm-devel.x86_64 freetype-devel.x86_64 gmp-devel.x86_64  openldap-devel.x86_64    zlib-devel.x86_64 mysql-devel.x86_64 ncurses-devel.x86_64 pcre-devel.x86_64 unixODBC-devel.x86_64  sqlite-devel.x86_64  readline-devel.x86_64  net-snmp-devel.x86_64  libxslt-devel.x86_64 
+#-local(root)
+scp /home/said/Desktop/LiteSpeed/lsws-5.4.8-ent-x86_64-linux.tar.gz root@161.35.124.152:~
+chmod 755 lsws-5.4.8-ent-x86_64-linux.tar.gz
+tar -zxvf lsws-5.4.8-ent-x86_64-linux.tar.gz
+cd lsws-5.4.8
+./install
+
+
 
 ```
