@@ -54,6 +54,7 @@ firewall-cmd --permanent --zone=public --add-port=40110-40210/tcp
 firewall-cmd --reload
 firewall-cmd --permanent --list-all
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
+ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 #If you want to kill the watchdog , run watchdog kill
 #cat /proc/swaps
 #timedatectl
