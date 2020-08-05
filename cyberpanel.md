@@ -61,6 +61,7 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 #python3 --version
 #firewall-cmd --permanent --list-all
 #dnf repolist
+netstat -pl | grep lsphp
 -Visit:cyberpanel
 https:<IP Address>:8090 
 login cyberpanel(change password)
