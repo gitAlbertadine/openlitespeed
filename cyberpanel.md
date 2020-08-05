@@ -1,3 +1,15 @@
+## AIDE
+```
+dnf install aide
+aide --init
+cd /var/lib/aide
+ls -lt
+mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz
+aide --check
+aide --update
+mv aide.db.gz aide.db.gz-Dec082013`
+mv aide.db.new.gz aide.db.gz`
+```
 ## Cyberpanel
 ```
 #vi /etc/selinux/config
