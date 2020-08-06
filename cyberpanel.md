@@ -68,6 +68,7 @@ netstat -pl | grep lsphp
 -cockpit(9090)
 systemctl enable cockpit.socket
 systemctl start cockpit.socket
+dnf install cockpit-storaged.noarch
 -Visit:cyberpanel(8090)
 adminPass 'xxxxxxxxxxxxxx'
 
