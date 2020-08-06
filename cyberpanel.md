@@ -63,14 +63,12 @@ netstat -pl | grep lsphp
 #python3 --version
 #firewall-cmd --permanent --list-all
 #dnf repolist
--Visit:cyberpanel
-https:<IP Address>:8090 
-login cyberpanel(change password)
-adminPass 'xxxxxxxxxxxxxx'
--visit: webadmin consol
-https:<IP Address>:7080
--setup and login to OpenLiteSpeed webadmin console(change password)
+-setup webadmin console password(7080):
 /usr/local/lsws/admin/misc/admpass.sh
--visit cockpit
-https:<IP Address>:9090
+-cockpit(9090)
+systemctl enable cockpit.socket
+systemctl start cockpit.socket
+-Visit:cyberpanel(8090)
+adminPass 'xxxxxxxxxxxxxx'
+
 ```
