@@ -77,7 +77,7 @@ adminPass 'xxxxxxxxxxxxxx'
 cd && wget https://wordpress.org/latest.zip && unzip latest.zip && rm -rf latest.zip && cd wordpress
 mv * /home/openlites.ga/public_html && cd /home/openlites.ga/public_html && touch .htaccess && mkdir wp-content/upgrade 
 cp  /home/openlites.ga/public_html/wp-config-sample.php  /home/openlites.ga/public_html/wp-config.php  
-chown openlit:openlit /home/openlites.ga/public_html  * && chown -R openlit:nobody /home/openlites.ga/public_html/mail.openlites.ga.ga/
+chown -R openlit:openlit /home/openlites.ga/public_html && chown openlit:nobody /home/openlites.ga/public_html  && chown -R openlit:nobody /home/openlites.ga/public_html/mail.openlites.ga/ 
 curl -s https://api.wordpress.org/secret-key/1.1/salt/
 cd  /home/openlites.ga/public_html/ && vi wp-config.php
 -add
