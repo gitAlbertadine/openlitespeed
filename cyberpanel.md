@@ -55,6 +55,7 @@ firewall-cmd --reload
 firewall-cmd --permanent --list-all
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
+netstat -pl | grep lsphp
 #If you want to kill the watchdog , run watchdog kill
 #cat /proc/swaps
 #timedatectl
@@ -62,7 +63,6 @@ ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 #python3 --version
 #firewall-cmd --permanent --list-all
 #dnf repolist
-netstat -pl | grep lsphp
 -Visit:cyberpanel
 https:<IP Address>:8090 
 login cyberpanel(change password)
