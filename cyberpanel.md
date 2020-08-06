@@ -55,6 +55,7 @@ firewall-cmd --reload
 firewall-cmd --permanent --list-all
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
+reboot
 netstat -pl | grep lsphp
 #If you want to kill the watchdog , run watchdog kill
 #cat /proc/swaps
