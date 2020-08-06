@@ -75,11 +75,11 @@ dnf install cockpit-storaged.noarch
 adminPass 'xxxxxxxxxxxxxx'
 -wordpress:
 cd && wget https://wordpress.org/latest.zip && unzip latest.zip && rm -rf latest.zip && cd wordpress
-mv * /home/openlites.ga/public_html && cd /home/openlites.ga/public_html && touch .htaccess && mkdir wp-content/upgrade 
-cp  /home/openlites.ga/public_html/wp-config-sample.php  /home/openlites.ga/public_html/wp-config.php  
-chown openlit:openlit /home/openlites.ga/public_html  * && chown -R openlit:nobody /home/openlites.ga/public_html/mail.openlites.ga/
+mv * /home/site/public_html && cd /home/site/public_html && touch .htaccess && mkdir wp-content/upgrade 
+cp  /home/site/public_html/wp-config-sample.php  /home/site/public_html/wp-config.php  
+chown openlit:openlit /home/site/public_html  * && chown -R openlit:nobody /home/site/public_html/mail.site.ga/
 curl -s https://api.wordpress.org/secret-key/1.1/salt/
-vi /home/openlites.ga/public_html/wp-config.php
+vi /home/site/public_html/wp-config.php
 -add
     define('FS_METHOD', 'direct');
 
