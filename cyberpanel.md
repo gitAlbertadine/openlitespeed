@@ -73,5 +73,18 @@ systemctl start cockpit.socket
 dnf install cockpit-storaged.noarch
 -Visit:cyberpanel(8090)
 adminPass 'xxxxxxxxxxxxxx'
+-wordpress:
+cd && wget https://wordpress.org/latest.zip && unzip latest.zip && rm -rf latest.zip && cd wordpress
+mv * /home/openlites.ga/public_html && cd /home/openlites.ga/public_html && touch .htaccess && mkdir wp-content/upgrade 
+cp  /home/openlites.ga/public_html/wp-config-sample.php  /home/openlites.ga/public_html/wp-config.php  
+chown openlit:openlit /home/openlites.ga/public_html  * && chown -R openlit:nobody /home/openlites.ga/public_html/mail.openlites.ga/
+curl -s https://api.wordpress.org/secret-key/1.1/salt/
+vi /home/openlites.ga/public_html/wp-config.php
+-add
+    define('FS_METHOD', 'direct');
+
+
+
+
 
 ```
