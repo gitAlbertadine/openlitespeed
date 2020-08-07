@@ -72,7 +72,9 @@ netstat -pl | grep lsphp
 -setup webadmin console password(7080):
 -cockpit(9090)
 -Visit:cyberpanel(8090)
-adminPass 'xxxxxxxxxxxxxx'
+      adminPass 'xxxxxxxxxxxxxx'
+-phpmyadmin login:
+      root-> cat /etc/cyberpanel/mysqlPassword
 -wordpress script/\
 cd && wget https://wordpress.org/latest.zip && unzip latest.zip && rm -rf latest.zip && cd wordpress
 mv * /home/openlites.ga/public_html && cd /home/openlites.ga/public_html && touch .htaccess && mkdir wp-content/upgrade 
