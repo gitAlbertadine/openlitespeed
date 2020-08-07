@@ -53,6 +53,10 @@ firewall-cmd --permanent --zone=public --add-port=53/udp
 firewall-cmd --permanent --zone=public --add-port=40110-40210/tcp
 firewall-cmd --reload
 firewall-cmd --permanent --list-all
+systemctl enable cockpit.socket
+systemctl start cockpit.socket
+dnf install -y cockpit-storaged.noarch
+/usr/local/lsws/admin/misc/admpass.sh
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 Server configuration>External App>Edit>name,address
@@ -66,11 +70,7 @@ netstat -pl | grep lsphp
 #firewall-cmd --permanent --list-all
 #dnf repolist
 -setup webadmin console password(7080):
-/usr/local/lsws/admin/misc/admpass.sh
 -cockpit(9090)
-systemctl enable cockpit.socket
-systemctl start cockpit.socket
-dnf install cockpit-storaged.noarch
 -Visit:cyberpanel(8090)
 adminPass 'xxxxxxxxxxxxxx'
 -wordpress script/\
