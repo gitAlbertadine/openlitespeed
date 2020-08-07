@@ -56,8 +56,8 @@ firewall-cmd --permanent --list-all
 systemctl enable cockpit.socket
 systemctl start cockpit.socket
 dnf install -y cockpit-storaged.noarch
-/usr/local/lsws/admin/misc/admpass.sh
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
+/usr/local/lsws/admin/misc/admpass.sh
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 Server configuration>External App>Edit>name,address
 reboot
