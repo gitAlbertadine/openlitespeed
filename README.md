@@ -1,1 +1,1 @@
-# openlitespeed
+# LSWS/OLS
