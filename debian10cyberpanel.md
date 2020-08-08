@@ -1,3 +1,5 @@
+## cyberpanel on debian
+```
 passwd
 adduser said
 usermod -aG sudo said
@@ -16,3 +18,30 @@ timedatectl set-timezone America/New_York
 systemctl restart chronyd
 timedatectl
 systemctl reboot
+sudo apt install cockpit
+
+apt install ufw
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow OpenSSH
+ufw allow 8090/tcp
+ufw allow 7080/tcp
+ufw allow 9090/tcp
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw allow 443/udp
+ufw allow 21/tcp
+ufw allow 40110-40210/tcp
+ufw allow 25/tcp
+ufw allow 587/tcp
+ufw allow 465/tcp
+ufw allow 110/tcp 
+ufw allow 143/tcp
+ufw allow 993/tcp
+ufw allow 53/tcp
+ufw allow 53/udp
+ufw enable
+ufw status verbose
+
+
+```
