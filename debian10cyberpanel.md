@@ -39,7 +39,12 @@ ufw allow 53/tcp
 ufw allow 53/udp
 ufw enable
 ufw status verbose
+sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
+-------------------------
+webadmin console(7080): /usr/local/lsws/admin/misc/admpass.sh
+cyberpanel(8090): adminPass 'xxxxxxxxxxxxxx'
+phpmyadmin:root-> cat /etc/cyberpanel/mysqlPassword
 
-
-
+#cat /proc/swaps
+#timedatectl
 ```
