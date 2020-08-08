@@ -4,7 +4,7 @@ passwd
 adduser said
 usermod -aG sudo said
 apt update && apt upgrade
-apt install -y wget  zip unzip tar htop rsync chrony cockpit ufw
+apt install -y wget zip unzip tar htop chrony
 rsync --archive --chown=$USER:$USER ~/.ssh /home/said
 chown -R said:said /home/said/.ssh
 fallocate -l 1G /swapfile
@@ -18,12 +18,11 @@ timedatectl set-timezone America/New_York
 systemctl restart chronyd
 timedatectl
 systemctl reboot
+apt install ufw
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow OpenSSH
 ufw allow 8090/tcp
-ufw allow 7080/tcp
-ufw allow 9090/tcp
 ufw allow 80/tcp
 ufw allow 443/tcp
 ufw allow 443/udp
