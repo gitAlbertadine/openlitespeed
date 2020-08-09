@@ -93,79 +93,11 @@ vi /usr/local/lsws/Example/html/wordpress/wp-config.php
 #-visit cockpit
 #https:<IP Address>:9090
 ```
-
-## Initial setup/\
-```
-passwd
-adduser said
-passwd said
-gpasswd -a said wheel
-rsync --archive --chown=$USER:$USER ~/.ssh /home/said
-chown -R said:said /home/said/.ssh
-dnf check-update
-dnf update
-dnf -y install openssl openssl-libs libargon2 wget tar zip unzip  python2 python3
-fallocate -l 1G /swapfile
-dd if=/dev/zero of=/swapfile bs=1024 count=1048576
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
-sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
-timedatectl set-timezone America/New_York
-systemctl restart chronyd
-#cat /proc/swaps
-#timedatectl
-#python2 --version
-#python3 --version
-#vi /etc/selinux/config
-#-SELINUX=disabled
-#sudo reboot
-```
-## firewalld/\
-```
-yum install -y firewalld firewall-config firewall-applet
-systemctl start firewalld
-systemctl unmask --now firewalld.service
-firewall-cmd --permanent --add-service=ssh --zone=public
-firewall-cmd --permanent --add-service=http
-firewall-cmd --permanent --add-service=https
-#firewall-cmd --permanent --zone=public --add-port=8090/tcp
-firewall-cmd --permanent --zone=public --add-port=7080/tcp
-firewall-cmd --permanent --zone=public --add-port=9090/tcp
-firewall-cmd --permanent --zone=public --add-port=80/tcp
-firewall-cmd --permanent --zone=public --add-port=443/tcp
-firewall-cmd --permanent --zone=public --add-port=443/udp
-#firewall-cmd --permanent --zone=public --add-port=21/tcp
-#firewall-cmd --permanent --zone=public --add-port=40110-40210/tcp
-#firewall-cmd --permanent --zone=public --add-port=25/tcp
-#firewall-cmd --permanent --zone=public --add-port=587/tcp
-#firewall-cmd --permanent --zone=public --add-port=465/tcp
-#firewall-cmd --permanent --zone=public --add-port=110/tcp
-#firewall-cmd --permanent --zone=public --add-port=143/tcp
-#firewall-cmd --permanent --zone=public --add-port=993/tcp
-#firewall-cmd --permanent --zone=public --add-port=53/tcp
-#firewall-cmd --permanent --zone=public --add-port=53/udp
-firewall-cmd --reload
-systemctl enable --now firewalld.service
-#firewall-cmd --permanent --list-all
-#sudo firewall-cmd --permanent --remove-service=ssh
-#sudo firewall-cmd --get-services
-
-```
 ## root/\
 ```
 [#vi /etc/ssh/sshd_config
 #PermitRootLogin no
 #systemctl reload sshd]
-```
-## chrony/\
-```
-[timedatectl set-timezone America/New_York
-#timedatectl
-yum install -y chrony
-systemctl start chronyd
-systemctl enable chronyd
-systemctl restart chronyd]
 ```
 ## epel-release/\
 ```
