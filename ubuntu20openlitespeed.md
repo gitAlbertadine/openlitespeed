@@ -35,6 +35,6 @@ wget https://openlitespeed.org/packages/openlitespeed-1.5.2.tgz
 tar -xvzf openlitespeed-1.5.2.tgz
 cd openlitespeed
 sh install.sh
+/lib/systemd/systemd-sysv-install enable lsws
 systemctl start lsws
-systemctl enable lsws
 ```
