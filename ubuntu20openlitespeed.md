@@ -1,3 +1,5 @@
+## ubuntu20
+```
 apt update && apt upgrade
 passwd
 adduser said
@@ -35,3 +37,4 @@ cd openlitespeed
 sh install.sh
 systemctl start lsws
 systemctl enable lsws
+```
