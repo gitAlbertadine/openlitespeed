@@ -1,4 +1,4 @@
-## openlitespeed
+## openlitespeed(not ok)
 ```
 apt update && apt upgrade
 passwd
