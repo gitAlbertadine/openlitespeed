@@ -113,12 +113,12 @@ dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 ## openlitespeed/\
 ```
 rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm
-#yum repolist
-yum install -y openlitespeed
+#dnf repolist
+dnf install -y openlitespeed
 systemctl start lsws
 systemctl enable lsws
-yum install -y lsphp74 
-yum install -y lsphp74-*
+dnf install -y lsphp74 
+dnf install -y lsphp74-*
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 sudo /usr/local/lsws/bin/lswsctrl start
 #netstat -pl | grep lsphp
@@ -133,7 +133,7 @@ sudo /usr/local/lsws/bin/lswsctrl start
 ```
 ## MariaDB/\
 ```
-yum -y upgrade
+dnf -y upgrade
 tee /etc/yum.repos.d/MariaDB.repo<<EOF 
 [mariadb]
 name = MariaDB
@@ -141,8 +141,8 @@ baseurl = http://yum.mariadb.org/10.4/centos8-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 EOF
-yum install -y boost-program-options
-yum install -y MariaDB-server MariaDB-client --disablerepo=AppStream      [yum remove mariadb mariadb-server// rm -rf /var/lib/mysql// rm /etc/my.cnf]
+dnf install -y boost-program-options
+dnf install -y MariaDB-server MariaDB-client --disablerepo=AppStream      [yum remove mariadb mariadb-server// rm -rf /var/lib/mysql// rm /etc/my.cnf]
 systemctl enable --now mariadb
 mysql_secure_installation
 mysql -u root -p
