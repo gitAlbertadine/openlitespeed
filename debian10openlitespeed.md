@@ -1,3 +1,5 @@
+## openlitespeed
+```
 apt update && apt upgrade
 passwd
 adduser said
@@ -21,3 +23,4 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 echo "/swapfile swap swap defaults 0 0" | sudo tee -a /etc/fstab
 sudo mount -a
+```
