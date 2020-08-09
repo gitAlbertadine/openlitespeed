@@ -18,6 +18,9 @@ rsync --archive --chown=$USER:$USER ~/.ssh /home/said
 chown -R said:said /home/said/.ssh
 apt install -y perl libperl-dev libgd3 libgd-dev libgeoip1 libgeoip-dev geoip-bin libxml2 libxml2-dev libxslt1.1 libxslt1-dev
 apt autoremove
+apt install chrony
+timedatectl set-timezone America/New_York
+systemctl restart chronyd
 sudo fallocate -l 1G /swapfile
 sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
 sudo chmod 600 /swapfile
