@@ -11,6 +11,8 @@ ufw default allow outgoing
 ufw allow OpenSSH
 ufw allow 443/tcp
 ufw allow 80/tcp
+ufw allow 8090/tcp
+ufw allow 9090/tcp
 ufw enable
 rsync --archive --chown=$USER:$USER ~/.ssh /home/said
 chown -R said:said /home/said/.ssh
