@@ -31,10 +31,26 @@ sudo mount -a
 
 apt install build-essential libexpat1-dev libgeoip-dev libpcre3-dev libudns-dev zlib1g-dev libssl-dev libxml2 libxml2-dev rcs libpng-dev libpng-dev openssl autoconf g++ make openssl libssl-dev libcurl4-openssl-dev libcurl4-openssl-dev pkg-config libsasl2-dev libzip-dev
 
-wget https://openlitespeed.org/packages/openlitespeed-1.5.2.tgz
-tar -xvzf openlitespeed-1.5.2.tgz
-cd openlitespeed
-sh install.sh
+wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
+dnf install -y lsphp74 
+dnf install -y lsphp74-*
+ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
+sudo /usr/local/lsws/bin/lswsctrl start
+#netstat -pl | grep lsphp
+
 /lib/systemd/systemd-sysv-install enable lsws
 systemctl start lsws
+
+curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
+cat /etc/apt/sources.list.d/mariadb.list
+apt update
+apt install mariadb-server mariadb-client libmariadb3 mariadb-backup mariadb-common
+#*to remove purge and sudo rm -rf /var/lib/mysql/
+mysql_secure_installation
+systemctl restart mariadb.service
+mysql -u root -p
+
+apt install net-tools
+netstat -pl | grep lsphp
+
 ```
