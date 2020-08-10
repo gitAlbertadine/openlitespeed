@@ -1,3 +1,5 @@
+## fedora openlitespeed 
+```
 #vi /etc/selinux/config
 #-SELINUX=disabled
 #sudo reboot
@@ -29,3 +31,4 @@ firewall-cmd --permanent --zone=public --add-port=443/tcp
 firewall-cmd --permanent --zone=public --add-port=443/udp
 firewall-cmd --reload
 systemctl enable --now firewalld.service
+```
