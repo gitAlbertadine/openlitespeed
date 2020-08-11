@@ -14,6 +14,7 @@ echo $SHELL
 sudo pkg install bash
 bash
 sudo chsh -s /usr/local/bin/bash freebsd
+sudo chsh -s /usr/local/bin/bash root
 ctrl+d
 vim ~/.bash_profile
 source ~/.bash_profile 
