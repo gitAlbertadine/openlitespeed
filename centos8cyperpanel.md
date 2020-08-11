@@ -61,7 +61,10 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
 Server configuration>External App>Edit>name,address
 reboot
-netstat -pl | grep lsphp
+```
+## after
+```
+#netstat -pl | grep lsphp
 #If you want to kill the watchdog , run watchdog kill
 #cat /proc/swaps
 #timedatectl
@@ -75,7 +78,9 @@ netstat -pl | grep lsphp
       adminPass 'xxxxxxxxxxxxxx'
 -phpmyadmin login:
       root-> cat /etc/cyberpanel/mysqlPassword
--wordpress script/\
+```
+## wordpress script/\
+```
 cd && wget https://wordpress.org/latest.zip && unzip latest.zip && rm -rf latest.zip && cd wordpress
 mv * /home/openlites.ga/public_html && cd /home/openlites.ga/public_html && touch .htaccess && mkdir wp-content/upgrade 
 cp  /home/openlites.ga/public_html/wp-config-sample.php  /home/openlites.ga/public_html/wp-config.php  
