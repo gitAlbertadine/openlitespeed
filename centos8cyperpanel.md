@@ -15,6 +15,7 @@ mv aide.db.new.gz aide.db.gz`
 #vi /etc/selinux/config
 #-SELINUX=disabled
 #sudo reboot
+# lock lsws to IP
 passwd
 adduser said
 passwd said
