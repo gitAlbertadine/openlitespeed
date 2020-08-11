@@ -59,12 +59,12 @@ systemctl start cockpit.socket
 dnf install -y cockpit-storaged.noarch
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
 /usr/local/lsws/admin/misc/admpass.sh
-ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
-Server configuration>External App>Edit>name,address
 reboot
 ```
 ## after
 ```
+#?ln -sf /usr/local/lsws/lsphp74/bin/lsphp /usr/local/lsws/fcgi-bin/lsphp5
+#?Server configuration>External App>Edit>name,address
 #netstat -pl | grep lsphp
 #If you want to kill the watchdog , run watchdog kill
 #cat /proc/swaps
