@@ -10,7 +10,7 @@ aide --update
 mv aide.db.gz aide.db.gz-Dec082013`
 mv aide.db.new.gz aide.db.gz`
 ```
-## Cyberpanel
+## Cyberpanel-LSWS script(OK)
 ```
 #vi /etc/selinux/config
 #-SELINUX=disabled
