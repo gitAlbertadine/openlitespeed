@@ -34,5 +34,16 @@ sudo portsnap update
 or
 sudo portsnap fetch update
 
+cd /usr/ports/devel/pcre; make install clean; rehash;
+cd /usr/ports/devel/rcs; make install clean; rehash;
+cd /usr/ports/dns/udns; make install clean; rehash;
+cd /usr/ports/textproc/expat2; make install clean; rehash;
+cd /usr/ports/security/openssl; make install clean; rehash;
+cd /usr/ports/lang/perl5.26; make install clean; rehash;
+
+./configure --with-pcre=/usr/local --with-openssl=/usr --enable-http2
+
+
+...................to be continued
 
 ```
